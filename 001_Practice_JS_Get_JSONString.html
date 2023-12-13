@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML with JavaScript</title>
+    <script> // CORS
+        document.addEventListener("htmx:configRequest", (evt) => {
+            evt.detail.headers = [];
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css"/>
+</head>
+
+<body>
+    <h1> Jokes Bapak-Bapak: </h1>
+    <p id="joke-container"></p>
+    
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            let responseJSON = JSON.parse(this.responseText);
+            // console.log(responseJSON.data);
+            document.getElementById("joke-container").innerHTML = responseJSON.data;
+        }
+        xhttp.open("GET", "https://candaan-api.vercel.app/api/text/random", true);
+        xhttp.send();
+    </script>
+</body>
+
+</html>

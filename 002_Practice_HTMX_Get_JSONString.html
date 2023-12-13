@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/nunjucks@3.2.4/browser/nunjucks.min.js"></script>
+    <script>
+        // CORS workaround
+        document.addEventListener("htmx:configRequest", (evt) => {
+            evt.detail.headers = [];
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css"/>
+</head>
+
+<body>
+    <h1> Jokes Bapak-Bapak: </h1>
+
+    <div hx-ext="client-side-templates">
+        <div
+            hx-get="https://candaan-api.vercel.app/api/text/random/"
+            hx-trigger="revealed"
+            nunjucks-template="info-template">
+            <template id="info-template">
+                {% set itemaja = data %} 
+                {{ itemaja }}
+            </template>
+        </div>
+    </div>
+</body>
+
+</html>
