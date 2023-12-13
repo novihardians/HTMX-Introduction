@@ -1,5 +1,5 @@
 # HTMX-Introduction
-This time i would describe simple ways to understand HTMX. :)
+This time i would describe simple ways to understand HTMX. 💁👌🎍😍
 
 ### 001_Practice_JS_Get_JSONString.html
 This file showing how getting JSON String by Native JavaScript.
