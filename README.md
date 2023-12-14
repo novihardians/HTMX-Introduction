@@ -1,8 +1,14 @@
 # HTMX-Introduction
 This time i would describe simple ways to understand HTMX. 💁👌🎍😍
 
-### 001_Practice_JS_Get_JSONString.html
+### 001 - When use JS
 This file showing how getting JSON String by Native JavaScript.
 
-### 002_Practice_HTMX_Get_JSONString.html
+### 002 - When use HTMX
 Showing how getting JSON String by HTMX-Nunjucks.
+
+### 003 - HTMX: Click
+How to use Click Trigger in HTMX.
+
+### 004 - HTMX: Timeset
+How to use Timeset Trigger in HTMX.
