@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/nunjucks@3.2.4/browser/nunjucks.min.js"></script>
+    <script> // CORS
+        document.addEventListener("htmx:configRequest", (evt) => {
+            evt.detail.headers = [];
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css"/>
+</head>
+<body>
+
+    <div hx-ext="client-side-templates">
+        <h1>
+            Jokes Bapak-Bapak:
+        </h1>
+        <button
+            hx-get="https://candaan-api.vercel.app/api/text/random/" 
+            hx-swap="afterend"
+            hx-trigger="click"
+            nunjucks-template="info-template"> 
+            LIHAT JOKES
+        </button>
+        <template id="info-template"> <!-- tag <template> : needed if you use "nunjucks-template" -->
+            <i>
+                {% set itemaja = data %} 
+                {{ itemaja }}
+            </i>
+        </template>
+    </div>
+
+</body>
+</html>
+
+<!-- hx-swap :
+innerHTML - Replace the inner html of the target element
+outerHTML - Replace the entire target element with the response
+beforebegin - Insert the response before the target element
+afterbegin - Insert the response before the first child of the target element
+beforeend - Insert the response after the last child of the target element
+afterend - Insert the response after the target element
+delete - Deletes the target element regardless of the response
+none- Does not append content from response (out of band items will still be processed). 
+-->
