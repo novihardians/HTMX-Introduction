@@ -1,1 +1,3 @@
 ABC
+
+PHP adalah singkatan dari Hypertext Preprocessor, yaitu bahasa pemrograman yang digunakan untuk mengembangkan aplikasi web. PHP merupakan bahasa pemrograman server-side yang memungkinkan pengembang untuk: Mengolah data, Mengakses database, Menghasilkan konten dinamis dalam halaman web.
